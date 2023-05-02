@@ -20,7 +20,6 @@ public class Pix {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     private String chaveOrigem;
     private String chaveDestino;
     private Double valor;
