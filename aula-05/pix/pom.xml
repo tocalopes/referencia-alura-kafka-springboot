@@ -38,7 +38,7 @@
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<version>42.5.1</version>
-		</dependency><!-- https://mvnrepository.com/artifact/io.confluent/kafka-connect-avro-converter -->
+		</dependency>
 		<dependency>
 			<groupId>io.confluent</groupId>
 			<artifactId>kafka-avro-serializer</artifactId>
