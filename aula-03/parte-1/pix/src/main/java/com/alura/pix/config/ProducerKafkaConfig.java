@@ -1,6 +1,7 @@
 package com.alura.pix.config;
 
 import com.alura.pix.dto.PixDTO;
+import com.alura.pix.serdes.PixSerdes;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.Serdes;
@@ -34,10 +35,10 @@ public class ProducerKafkaConfig {
     @Bean(name = KafkaStreamsDefaultConfiguration.DEFAULT_STREAMS_CONFIG_BEAN_NAME)
     public KafkaStreamsConfiguration kafkaStreamsConfig() {
         Map props = new HashMap<>();
-        props.put(APPLICATION_ID_CONFIG , "kafka-streams-demo");
+        props.put(APPLICATION_ID_CONFIG , "kafka-streams-demo-6");
         props.put(BOOTSTRAP_SERVERS_CONFIG, bootstrapAddress);
         props.put(DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName());
-        props.put(DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.Long().getClass().getName());
+        props.put(DEFAULT_VALUE_SERDE_CLASS_CONFIG, PixSerdes.class);
         return new KafkaStreamsConfiguration(props);
     }
 

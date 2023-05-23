@@ -17,4 +17,5 @@ public class PixSerdes extends Serdes.WrapperSerde<PixDTO> {
         JsonDeserializer<PixDTO> deserializer = new JsonDeserializer<>(PixDTO.class);
         return Serdes.serdeFrom(serializer, deserializer);
     }
+
 }

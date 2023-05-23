@@ -8,8 +8,8 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@NoArgsConstructor
 public class PixDTO {
+    private String identifier;
     private String chaveOrigem;
     private String chaveDestino;
     private Double valor;
