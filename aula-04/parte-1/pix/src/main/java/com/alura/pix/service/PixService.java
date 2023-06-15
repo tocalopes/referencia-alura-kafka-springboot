@@ -22,7 +22,7 @@ public class PixService {
                 .setDataTransferencia(pixDTO.getDataTransferencia().toString())
                 .build();
 
-        kafkaTemplate.send("pix-topic-avro-7", pixDTO.getChaveOrigem(), pix);
+        kafkaTemplate.send("pix-topic-avro", pixDTO.getChaveOrigem(), pix);
         return pixDTO;
     }
 

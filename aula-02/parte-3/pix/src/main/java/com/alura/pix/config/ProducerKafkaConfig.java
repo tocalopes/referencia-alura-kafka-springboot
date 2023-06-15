@@ -96,7 +96,7 @@ public class ProducerKafkaConfig {
         ConcurrentKafkaListenerContainerFactory<String, String> factory =
                 new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory());
-        factory.setCommonErrorHandler(errorHandler());
+       // factory.setCommonErrorHandler(errorHandler());
         return factory;
     }
 

@@ -83,10 +83,6 @@ public class ProducerKafkaConfig {
                 false); // default true
 
 
-        props.put(
-                ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
-                JsonDeserializer.class);
-
         return new DefaultKafkaConsumerFactory<>(props);
     }
 

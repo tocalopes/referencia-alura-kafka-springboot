@@ -15,11 +15,12 @@ public class ValidarPix {
 
         if (pixDTO.getValor() != null && pixDTO.getValor() > 0) {
             pixDTO.setStatus(PixStatus.PROCESSADO);
+
+
         } else  {
             pixDTO.setStatus(PixStatus.ERRO);
         }
         acknowledgment.acknowledge();
-
     }
 
 

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ValidarPix {
 
-    @KafkaListener(topics = "pix-topic-avro-7", groupId = "group-1")
+    @KafkaListener(topics = "pix-topic-avro", groupId = "group-1")
     public void process(Pix pix) throws JsonProcessingException {
         System.out.println(pix.getChaveDestino());
 
