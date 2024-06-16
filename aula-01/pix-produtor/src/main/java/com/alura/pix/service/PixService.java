@@ -15,11 +15,13 @@ public class PixService {
     @Autowired
     private final PixRepository pixRepository;
 
+    //necessário para produzir as mensagens kafka
     @Autowired
     private final KafkaTemplate<String, PixDTO>  kafkaTemplate;
 
     public PixDTO salvarPix(PixDTO pixDTO) {
         pixRepository.save(Pix.toEntity(pixDTO));
+        //a função send envia mesgens pro topico, pix-topic.
         kafkaTemplate.send("pix-topic", pixDTO.getIdentifier(), pixDTO);
         return pixDTO;
     }

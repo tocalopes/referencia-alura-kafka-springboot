@@ -14,13 +14,16 @@ import org.springframework.kafka.support.serializer.JsonSerializer;
 import java.util.HashMap;
 import java.util.Map;
 
+//Classe de configuração do produtor cafka
 @Configuration
 public class ProducerKafkaConfig {
 
 
+    //Valor do servidor do apacha kafka
     @Value(value = "${spring.kafka.bootstrap-servers:localhost:9092}")
     private String bootstrapAddress;
 
+    //Cria as configurações para apontamento do servbidor como: local servidor, serializadaores e chave e valor.
     @Bean
     public ProducerFactory<String, PixDTO> producerFactory() {
         Map<String, Object> configProps = new HashMap<>();

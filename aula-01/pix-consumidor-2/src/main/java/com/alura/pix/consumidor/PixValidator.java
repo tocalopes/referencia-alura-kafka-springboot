@@ -22,7 +22,7 @@ public class PixValidator {
     private PixRepository pixRepository;
 
     //Anotação para criar um consumidor para um tópico.
-    @KafkaListener(topics = "pix-topic", groupId = "grupo-1")
+    @KafkaListener(topics = "pix-topic", groupId = "grupo-2")
     public void processaPix(PixDTO pixDTO){
         System.out.println("Pix Recebido: " + pixDTO.getIdentifier());
         Pix pix = pixRepository.findByIdentifier(pixDTO.getIdentifier());
